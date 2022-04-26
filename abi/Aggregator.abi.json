@@ -1,0 +1,145 @@
+[
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "sender",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "srcToken",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "dstToken",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "dstReceiver",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "spentAmount",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "returnAmount",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "minReturnAmount",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "referrer",
+                "type": "address"
+            }
+        ],
+        "name": "Swapped",
+        "type": "event"
+    },
+    {
+        "stateMutability": "payable",
+        "type": "receive"
+    },
+    {
+        "inputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "address",
+                        "name": "tokenIn",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "tokenOut",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "amountIn",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "amountOutMin",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "deadline",
+                        "type": "uint256"
+                    }
+                ],
+                "internalType": "struct Aggregator2.Order",
+                "name": "order",
+                "type": "tuple"
+            },
+            {
+                "components": [
+                    {
+                        "internalType": "uint256",
+                        "name": "amount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "address[][]",
+                        "name": "steps",
+                        "type": "address[][]"
+                    }
+                ],
+                "internalType": "struct Aggregator2.Route[]",
+                "name": "routes",
+                "type": "tuple[]"
+            },
+            {
+                "internalType": "address payable",
+                "name": "recipient",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "referrer",
+                "type": "address"
+            }
+        ],
+        "name": "aggregate",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "amountOut",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "gasLeft",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "payable",
+        "type": "function"
+    }
+]
